@@ -26,7 +26,7 @@ class Work {
     $this->status = $status;
   }
 
-  public function getWorkId(): string {
+  public function getWorkId(): int {
     return $this->workId;
   }
 
@@ -75,13 +75,15 @@ class Work {
     }
   }
 
-  public function save(): void {
+  public function save(): int {
     $db = Db::getInstance();
+    $insert = false;
     if ($this->workId) {
       $stmt = $db->prepare("UPDATE works SET name=:name, starting_date=:starting_date, ending_date=:ending_date, status=:status WHERE id=:id");
       $stmt->bindValue(':id', $this->getWorkId(), PDO::PARAM_INT);
     }
     else {
+      $insert = true;
       $stmt = $db->prepare("INSERT INTO works (name, starting_date, ending_date, status) VALUES (:name, :starting_date, :ending_date, :status)");
     }
     $stmt->bindValue(':name', $this->getWorkName(), PDO::PARAM_STR);
@@ -89,6 +91,10 @@ class Work {
     $stmt->bindValue(':ending_date', $this->getEndingDate(), PDO::PARAM_STR);
     $stmt->bindValue(':status', $this->getStatus(), PDO::PARAM_INT);
     $stmt->execute();
+    if ($insert) {
+      $this->workId = $db->lastInsertId();
+    }
+    return $this->workId;
   }
 
   public static function all(): array {
