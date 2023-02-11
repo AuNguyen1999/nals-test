@@ -33,7 +33,7 @@ git cd todo-php
 git cd composer install
 ```
 4. Create a new database in your MySQL server
-5. Import the db.sql file to the newly created database
+5. Import the works.sql file to the newly created database
 6. Modify the connection.php file with your database credentials
 7. Move the project files to your web server directory
 8. Open your web browser and navigate to the project URL
