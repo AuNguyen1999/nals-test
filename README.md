@@ -1,22 +1,22 @@
-#Todo List
+# Todo List
 A simple and straightforward application for managing works. This application is built using PHP and allows users to create, read, update, and delete works with a user-friendly interface.
 
-##Getting Started
+## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes
 
-##Features
+## Features
 1. Add new work with name, starting date, ending date, and status
 2. View all existing works
 3. Update existing work information
 4. Delete a work
 
-##Prerequisites
+## Prerequisites
 1. PHP 7.2 or higher
 2. MySQL 5.7 or higher
 3. Apache or Nginx web server
 5. Composer
 
-##Installation
+## Installation
 
 1. Clone the repository to your local machine
 ```bash
@@ -38,16 +38,17 @@ git cd composer install
 7. Move the project files to your web server directory
 8. Open your web browser and navigate to the project URL
 
-##Running the tests
+## Running the tests
 This project uses PHPUnit for unit testing. To run the tests, simply run the following command in the project root directory:
 ```bash
 vendor/bin/phpunit tests
 ```
-##Built With
+
+## Built With
 * PHP 7.4 
 * MySQL or MariaDB database
 * Composer
 * Fullcalendar
 
-##Author
+## Author
 Au Nguyen
