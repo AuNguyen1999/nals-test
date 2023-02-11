@@ -26,11 +26,11 @@ git clone https://github.com/AuNguyen1999/todo-php.git
 
 2. Change into the project directory:
 ```bash
-git cd todo-php
+cd todo-php
 ```
 3. Install the required dependencies using Composer:
 ```bash
-git cd composer install
+composer install
 ```
 4. Create a new database in your MySQL server
 5. Import the `works.sql` file to the newly created database
